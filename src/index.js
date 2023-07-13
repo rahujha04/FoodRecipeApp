@@ -4,8 +4,7 @@ import mongoose from "mongoose";
 import { userRouter } from "./routes/user.js";
 import { recipesRouter } from "./routes/recipes.js";
 import dotenv from "dotenv";
-// import path from "path";
-// import { fileURLToPath } from "url";
+
 
 
 const app = express();
@@ -18,16 +17,6 @@ dotenv.config();
 
 app.use("/auth", userRouter);
 app.use("/recipes", recipesRouter);
-
-// const __filename = fileURLToPath(import.meta.url);
-
-// const __dirname = path.dirname(__filename);
-
-// app.use(express.static(path.join(__dirname, "./client/build")));
-
-// app.get('*', function (req, res) {
-//   res.sendFile(path.join(__dirname, './client/build/index.html'));
-// })
 
 
 const DB_URL = process.env.MONGODB_URL;
